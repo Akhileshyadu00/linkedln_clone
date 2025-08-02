@@ -5,14 +5,26 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
+import Post from "./components/Post";
+import Feeds from "./pages/Feeds";
+import Profile from "./pages/Profile";
 
 function App() {
+
+  const isLogin = false;
+
   return (
     <BrowserRouter>
-      <Navbar />
+    {
+      isLogin? <Navbar /> : <Navbar />
+    }
+      
 
       <main className="min-h-[80vh]">
         <Routes>
+          <Route path="/profile" element={<Profile />} />
+           <Route path="/feeds" element={<Feeds />} />
+          <Route path="/post" element={<Post />} />
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registration />} />
