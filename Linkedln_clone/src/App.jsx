@@ -8,6 +8,7 @@ import Registration from "./components/Registration";
 import Post from "./components/Post";
 import Feeds from "./pages/Feeds";
 import Profile from "./pages/Profile";
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <AuthProvider>
     {
       isLogin? <Navbar /> : <Navbar />
     }
@@ -32,6 +34,7 @@ function App() {
       </main>
 
       <Footer />
+      </AuthProvider>
     </BrowserRouter>
   );
 }

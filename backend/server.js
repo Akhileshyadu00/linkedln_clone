@@ -2,7 +2,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRoutes from './routes/user.js';
-import postRoutes from './routes/post.js'
+import postRoutes from './routes/post.js';
+import cors from 'cors';
 
 
 // Load environment variables
@@ -14,6 +15,12 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 // Middleware
 app.use(express.json());
+
+app.use(cors({
+  origin: ['http://localhost:5173'],
+  credentials: true
+} 
+))
 
 // Routes
 app.use('/api/users', userRoutes);

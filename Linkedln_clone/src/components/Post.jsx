@@ -1,14 +1,48 @@
 // src/pages/Post.jsx
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import axios from 'axios';
+import { AuthContext } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function Post() {
   const [content, setContent] = useState('');
+  const [message, setMessage] = useState('');
+  const { token, user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!content.trim()) return alert('Post cannot be empty!');
-    alert(`Post submitted: ${content}`);
-    setContent('');
+    setMessage('');
+
+    if (!content.trim()) {
+      setMessage('Post cannot be empty.');
+      return;
+    }
+
+    try {
+      const res = await axios.post(
+        'http://localhost:4001/api/post/createPost',
+        { content },
+        {
+          headers: {
+            Authorization: `JWT ${token}`,
+          },
+          withCredentials: true,
+        }
+      );
+      console.log(res);
+      
+      setContent('');
+      setMessage('Post created successfully!');
+      setTimeout(() => navigate('/profile'), 1000);
+    } catch (err) {
+      console.error('Post creation error:', err);
+      if (err.response?.data?.message) {
+        setMessage(err.response.data.message);
+      } else {
+        setMessage('Something went wrong. Try again.');
+      }
+    }
   };
 
   return (
@@ -29,6 +63,12 @@ function Post() {
         >
           Post
         </button>
+
+        {message && (
+          <p className={`text-center text-sm mt-2 ${message.includes('success') ? 'text-green-600' : 'text-red-600'}`}>
+            {message}
+          </p>
+        )}
       </form>
     </div>
   );
