@@ -6,34 +6,26 @@ import Home from "./pages/Home";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
 import Post from "./components/Post";
-import Feeds from "./pages/Feeds";
 import Profile from "./pages/Profile";
 import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
-
-  const isLogin = false;
-
   return (
     <BrowserRouter>
-    <AuthProvider>
-    {
-      isLogin? <Navbar /> : <Navbar />
-    }
-      
+      <AuthProvider>
+        <Navbar />
 
-      <main className="min-h-[80vh]">
-        <Routes>
-          <Route path="/profile" element={<Profile />} />
-           <Route path="/feeds" element={<Feeds />} />
-          <Route path="/post" element={<Post />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Registration />} />
-        </Routes>
-      </main>
+        <main className="min-h-[80vh]">
+          <Routes>
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/post" element={<Post />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Registration />} />
+          </Routes>
+        </main>
 
-      <Footer />
+        <Footer />
       </AuthProvider>
     </BrowserRouter>
   );
