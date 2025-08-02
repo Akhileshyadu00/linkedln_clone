@@ -9,7 +9,7 @@ function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get('http://localhost:4001/api/post/all');
+        const res = await axios.get('https://linkedln-clone-1.onrender.com/api/post/all');
         setPosts(res.data.posts);
         setLoading(false);
       } catch (err) {

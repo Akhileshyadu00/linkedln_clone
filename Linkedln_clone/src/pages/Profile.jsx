@@ -23,7 +23,7 @@ function Profile() {
     const fetchPosts = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:4001/api/post/user/${user.id}`,
+          `https://linkedln-clone-1.onrender.com/api/post/user/${user.id}`,
           {
             headers: {
               Authorization: `JWT ${token}`,
