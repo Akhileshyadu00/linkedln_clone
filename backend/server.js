@@ -17,7 +17,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 app.use(express.json());
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://linkedln-clone-lac.vercel.app/'],
+  origin: ['http://localhost:5173', 'https://linkedln-clone2.onrender.com'],
   credentials: true
 } 
 ))
