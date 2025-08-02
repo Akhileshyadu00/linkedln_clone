@@ -9,7 +9,7 @@ function Footer() {
         
         {/* Company Info */}
         <div>
-          <h3 className="text-2xl font-bold text-blue-400 mb-3">Linked</h3>
+          <h3 className="text-2xl font-bold text-blue-400 mb-3">Linkedln</h3>
           <p className="text-gray-400">
             Connecting professionals around the world. Join us to grow your network and career.
           </p>
