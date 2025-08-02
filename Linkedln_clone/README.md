@@ -1,12 +1,71 @@
-# React + Vite
+# LinkedIn Clone App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[GitHub Repo Link](https://github.com/Akhileshyadu00/linkedln_clone.git)  
+[Live Demo](https://your-live-demo-url.com)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Overview
 
-## Expanding the ESLint configuration
+This is a LinkedIn-style social media app where users can register, log in, create posts, and view posts from others. It features user authentication, post creation, and a feed displaying posts with author info.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+- **Frontend:** React, React Router, Axios, Tailwind CSS
+- **Backend:** Node.js, Express.js, MongoDB, Mongoose
+- **Authentication:** JWT (JSON Web Tokens)
+- **Other:** CORS, dotenv
+
+---
+
+## Setup Instructions
+
+### Backend
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/Akhileshyadu00/linkedln_clone.git
+   cd your-repo-name/backend
+
+2. Install dependencies:
+    npm install
+
+3. Create .env file in the backend folder:
+    MONGO_URI=your_mongodb_connection_string
+    JWT_SECRET=your_jwt_secret
+    PORT=4001
+
+4. Start the backend server:
+    npm start
+
+
+### Frontend
+
+1. In another terminal, navigate to frontend:
+    cd ../Linkedln_clone
+
+2. Install dependencies:
+    npm install
+
+3. Start the React app:
+    npm run dev
+
+
+
+### Features
+
+User Registration and Login with JWT authentication
+Create, view, and list posts
+Responsive UI with Tailwind CSS
+Profile page with user info and posts
+Mobile-friendly navigation menu
+Real-time form validation and error handling
+Protected routes (optional to add)
+
+
+### License
+
+MIT © Akhilesh Yadav
+
