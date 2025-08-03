@@ -1,7 +1,7 @@
 # LinkedIn Clone App
 
 [GitHub Repo Link](https://github.com/Akhileshyadu00/linkedln_clone.git)  
-[Live Demo](https://your-live-demo-url.com)
+[Live Demo](https://linkedln-clone-six.vercel.app/)
 
 ---
 

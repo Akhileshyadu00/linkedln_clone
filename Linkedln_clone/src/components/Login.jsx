@@ -18,7 +18,7 @@ function Login() {
     setError('');
 
     try {
-      const { data } = await axios.post('https://linkedln-clone-1.onrender.com/api/users/login', {
+      const { data } = await axios.post('https://linkedln-clone-1-a1xr.onrender.com/api/users/login', {
         email,
         password,
       }, { withCredentials: true });

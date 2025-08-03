@@ -18,7 +18,7 @@ function Registration() {
     setError('');
 
     try {
-      const { data } = await axios.post('https://linkedln-clone-1.onrender.com/api/users/register', {
+      const { data } = await axios.post('https://linkedln-clone-1-a1xr.onrender.com/api/users/register', {
         userName,
         email,
         password,

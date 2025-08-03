@@ -21,7 +21,7 @@ function Post() {
 
     try {
       const res = await axios.post(
-        'https://linkedln-clone-1.onrender.com/api/post/createPost',
+        'https://linkedln-clone-1-a1xr.onrender.com/api/post/createPost',
         { content },
         {
           headers: {
