@@ -1,7 +1,9 @@
 import React, { useState, useContext } from 'react';
-import { HiMenu, HiX, HiHome, HiBell } from 'react-icons/hi';
+import { HiMenu, HiX } from 'react-icons/hi';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
+import { CgProfile } from "react-icons/cg";
+import { MdOutlinePostAdd } from "react-icons/md";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,10 +42,13 @@ function Navbar() {
 
         {/* Icons */}
         <div className="hidden md:flex items-center gap-6 text-2xl">
-          <Link to="/">
-            <HiHome className="hover:text-blue-400 transition" title="Home" />
+          <Link to="/profile">
+            
+            <CgProfile className="hover:text-blue-400 transition" title="Profile"/>
           </Link>
-          <HiBell className="hover:text-blue-400 transition cursor-pointer" title="Notifications" />
+          <Link to={"/post"}>
+          <MdOutlinePostAdd className="hover:text-blue-400 transition cursor-pointer" title="Post"/>
+          </Link>
         </div>
 
         {/* Desktop Auth Buttons */}
